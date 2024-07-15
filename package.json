@@ -1,0 +1,11 @@
+{
+  "name": "jobportal",
+  "version": "1.0.0",
+  "description": "This is s job portal website that allow recruiters to post and manage job listing and provides a user-friendly platform for job seekers to find and apply for suitable roles.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohit Kumar",
+  "license": "ISC"
+}
