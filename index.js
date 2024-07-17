@@ -12,7 +12,7 @@ app.set('views', path.join(path.resolve(), 'src', 'views'));
 
 
 app.get('/', (req, res) => {
-  res.render('layout');
+  res.render('landing');
 });
 
 app.listen(3000, () => {
