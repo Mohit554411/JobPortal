@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     background-image: url('/images/bodyBackgroundImg.svg');
     background-position: center;
@@ -8,13 +8,20 @@ body{
     font-family: "Poppins", sans-serif;
     font-size: 16px;
 }
-.navContainer{
+
+/* width */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.navContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1% 5%;
 }
-.navContainer a{
+
+.navContainer a {
     display: inline-block;
     color: white;
     text-decoration: none;
@@ -23,72 +30,285 @@ body{
     width: 7vw;
     text-align: center;
 }
-.leftSection{
+
+.leftSection {
     display: flex;
     align-items: center;
 }
-.leftSection img{
+
+.leftSection img {
     width: 50px;
     height: 50px;
     aspect-ratio: 1/2;
     margin-right: 5vw;
     filter: drop-shadow(0 0 5px #25302d);
 }
-.signUpBtn{
+
+.signUpBtn {
     background-color: #1f342b;
     border-radius: 8px;
-    padding: 8px 0; 
+    padding: 8px 0;
     box-shadow: 0 0 5px #33413e;
-    font-size: 0.9rem;  
+    font-size: 0.9rem;
 }
-.signInBtn{
+
+.signInBtn {
     background-color: #1c4b3d;
     border-radius: 8px;
     padding: 8px 0;
     margin-right: 30px;
-    box-shadow: 0 0 5px #25302d;
+    box-shadow: 0 0 5px #101d19;
     font-size: 0.9rem;
 }
-.mainContainer{
+
+.mainContainer {
     margin: 0 5%;
 }
-.row{
+
+/* register */
+
+.registerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80vh;
+}
+.registerContainer .title{
+    height: 40vh;
+    font-size: clamp(1.5rem,3vw,3rem);
+    background-color: #1c4b3d;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 18px 0 0 18px;
+    box-shadow: 0 0 5px #101d19;
+}
+.registerContainer .formCard{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    background-color: #f1f1f6;
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: 0 0 5px #101d19;
+}
+.registerContainer .formCard label{
+    margin: 8px 0;
+    color: #7a7a7a;
+}
+.registerContainer .formCard input{
+    margin: 8px 0;
+    padding: 10px 12px;
+    border: none;
+    outline: none;
+    color: #7a7a7a;
+    border-radius: 8px;
+}
+.registerContainer .formCard span{
+    color: #7a7a7a;
+}
+.registerContainer .formCard select{
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    color: #7a7a7a;
+    outline: none;
+}
+.registerContainer .formCard button{
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #1c4b3d;
+    cursor: pointer;
+    font-size: 1rem;
+}
+/* landing */
+.row {
     padding: 2%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
 }
-.row .leftCol, .rightCol{
+
+.row .leftCol,
+.rightCol {
     width: 50%;
     position: relative;
 }
-.row .leftCol h1{
-    font-size: 5rem;
+
+.row .leftCol h1 {
+    font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 300;
     color: white;
 }
-.row .leftCol p{
-    color: #6b6b6b;
+
+.row .leftCol p {
+    color: #7a7a7a;
 }
-.rightCol .imgCard img{
+
+.row .leftCol a {
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    color: #313131;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #14d7a4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 4rem;
+    box-shadow: 0 0 5px #101d19;
+}
+
+.row .leftCol a:nth-of-type(2) {
+    color: white;
+    margin-left: 50px;
+    background-color: #1c4b3d;
+}
+
+.rightCol .imgCard img {
     width: 20vw;
     aspect-ratio: 1/1;
     border-radius: 18px;
     box-shadow: 0 0 5px #000000;
 }
-.imgCard:nth-of-type(1){
+
+.imgCard {
+    transition: all 0.5s ease-in-out;
+}
+
+.imgCard:nth-of-type(1) {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 5vh;
 }
-.imgCard:nth-of-type(2){
+
+.imgCard:nth-of-type(2) {
     position: absolute;
     top: 10vh;
     right: 0;
 }
-.imgCard:nth-of-type(3){
+
+.imgCard:nth-of-type(3) {
     position: absolute;
-    top: 35vh;
-    left: 20vh;
+    top: 40vh;
+    right: 10vh;
 }
+
+.imgCard:nth-of-type(4) {
+    position: absolute;
+    top: 30vh;
+    left: -5vh;
+}
+
+.imgCard:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+/* Jobs Page */
+.JobContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 2%;
+    height: 75vh;
+    gap: 2%;
+}
+
+.filterSection {
+    width: 22vw;
+    max-width: 30vw;
+    height: 75vh;
+    border: 1px solid #7a7a7a;
+    border-radius: 18px;
+    color: white;
+    padding: 16px;
+}
+
+.jobListSection {
+    flex-grow: 1;
+    border-radius: 18px;
+    /* padding: 16px; */
+    color: white;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.filterSection header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filterSection header span {
+    margin-left: 20px;
+}
+
+.jobListSection .jobCard {
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #f1f1f6;
+    border-radius: 18px;
+    color: #7a7a7a;
+    cursor: pointer;
+}
+
+.jobListSection .jobCard header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.jobListSection .jobCard header img {
+    border: 1px solid #7a7a7a;
+    border-radius: 50%;
+}
+
+.jobListSection .jobCard header .jobCard__header__content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.jobListSection .jobCard header h3,
+.jobListSection .jobCard header p {
+    margin: 0;
+    margin-left: 30px;
+}
+
+.jobListSection .jobCard section {
+    margin: 16px 16px 0 16px;
+}
+
+.jobListSection .jobCard section .jobDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+}
+
+.jobListSection .jobCard section .jobDetails span {
+    font-size: clamp(12px, 1vw, 14px);
+    margin-left: 20px;
+}
+
+.jobListSection .jobCard section .jobDetails .skillsChip {
+    font-size: clamp(12px, 1vw, 14px);
+    background-color: #14d7a4;
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+}
+
+/* Job Details */
