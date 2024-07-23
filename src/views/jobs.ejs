@@ -5,104 +5,36 @@
         </div>
     </aside>
     <section class="jobListSection">
-            <div class="jobCard">
+        <% jobs.forEach(job=>{ %>
+            <div class="jobCard" data-job-id='<%= job.id %>'>
                 <header>
                     <div class="jobCard__header__content">
                         <img src="/images/reactIcon.svg" alt="">
                         <div>
-                            <h3>Job Title</h3>
-                            <p>Job Description</p>
+                            <h3><%= job.jobCategory %></h3>
+                            <p><%= job.jobDesignation %></p>
                         </div>
                     </div>
                     <div>
-                        <p>Posted 2 days ago</p>
+                        <p>Posted <%= job.jobPosted %></p>
                     </div>
                 </header>
                 <section>
                     <div class="jobDetails">
-                        <img src="/images/workIcon.svg" alt="">
-                        <span>Full Stack Developer</span>
-                    </div>
-                    <div class="jobDetails">
                         <img src="/images/rupeeIcon.svg" alt="">
-                        <span>10 LPA</span>
+                        <span><%= job.salary %></span>
                     </div>
                     <div class="jobDetails">
                         <img src="/images/locationIcon.svg" alt="">
-                        <span>Hyderabad,India</span>
+                        <span><%= job.jobLocation %></span>
                     </div>
                     <div class="jobDetails">
-                        <span class="skillsChip">React</span>
-                        <span class="skillsChip">NodeJs</span>
-                        <span class="skillsChip">JavaScript</span>
+                        <% job.skillsRequired.forEach(skill=>{ %>
+                            <span class="skillsChip"><%= skill %></span>
+                        <% }) %>
                     </div>
                 </section>
             </div>
-            <div class="jobCard">
-                <header>
-                    <div class="jobCard__header__content">
-                        <img src="/images/reactIcon.svg" alt="">
-                        <div>
-                            <h3>Job Title</h3>
-                            <p>Job Description</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Posted 2 days ago</p>
-                    </div>
-                </header>
-                <section>
-                    <div class="jobDetails">
-                        <img src="/images/workIcon.svg" alt="">
-                        <span>Full Stack Developer</span>
-                    </div>
-                    <div class="jobDetails">
-                        <img src="/images/rupeeIcon.svg" alt="">
-                        <span>10 LPA</span>
-                    </div>
-                    <div class="jobDetails">
-                        <img src="/images/locationIcon.svg" alt="">
-                        <span>Hyderabad,India</span>
-                    </div>
-                    <div class="jobDetails">
-                        <span class="skillsChip">React</span>
-                        <span class="skillsChip">NodeJs</span>
-                        <span class="skillsChip">JavaScript</span>
-                    </div>
-                </section>
-            </div>
-            <div class="jobCard">
-                <header>
-                    <div class="jobCard__header__content">
-                        <img src="/images/reactIcon.svg" alt="">
-                        <div>
-                            <h3>Job Title</h3>
-                            <p>Job Description</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Posted 2 days ago</p>
-                    </div>
-                </header>
-                <section>
-                    <div class="jobDetails">
-                        <img src="/images/workIcon.svg" alt="">
-                        <span>Full Stack Developer</span>
-                    </div>
-                    <div class="jobDetails">
-                        <img src="/images/rupeeIcon.svg" alt="">
-                        <span>10 LPA</span>
-                    </div>
-                    <div class="jobDetails">
-                        <img src="/images/locationIcon.svg" alt="">
-                        <span>Hyderabad,India</span>
-                    </div>
-                    <div class="jobDetails">
-                        <span class="skillsChip">React</span>
-                        <span class="skillsChip">NodeJs</span>
-                        <span class="skillsChip">JavaScript</span>
-                    </div>
-                </section>
-            </div>
+        <%})%>
     </section>
 </div>
