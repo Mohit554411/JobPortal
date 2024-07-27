@@ -1,67 +1,105 @@
 <div class="JobDetailsContainer">
     <section class="jobDetailsSection">
-            <div class="jobCard" data-job-id='<%= job.id %>'>
-                <header>
-                    <div class="jobCard__header__content">
-                        <img src="/images/reactIcon.svg" alt="">
-                        <h3><%= job.jobCategory %></h3>
-                    </div>
-                    <div>
-                        <p>Posted <%= job.jobPosted %></p>
-                    </div>
-                </header>
-                <section>
-                    <div class="jobDetails">
-                        <b>Designation</b>
-                        <span><%= job.jobDesignation %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Comapny</b>
-                        <span><%= job.companyName %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Salary</b>
-                        <span><%= job.salary %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Location</b>
-                        <span><%= job.jobLocation %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Work Experience</b>
-                        <span><%= job.workExperience %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Opening</b>
-                        <span><%= job.numberOfopenings %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Applicants</b>
-                        <% if(job.applicants.length == 0){%>
-                            <span> 0 </span>
+        <div class="jobCard" data-job-id='<%= job.id %>'>
+            <header>
+                <div class="jobCard__header__content">
+                    <% if(job.compnayLogo){ %>
+                        <img src="<%= job.compnayLogo %>" alt="">
+                        <% } else {%>
+                            <img src="/images/reactIcon.svg" alt="">
+                            <% } %>
+                                <h3>
+                                    <%= job.jobCategory %>
+                                </h3>
+                </div>
+                <div>
+                    <p>Posted <%= job.jobPosted %>
+                    </p>
+                </div>
+            </header>
+            <section>
+                <div class="jobDetails">
+                    <b>Designation</b>
+                    <span>
+                        <%= job.jobDesignation %>
+                    </span>
+                </div>
+                <div class="jobDetails">
+                    <b>Comapny</b>
+                    <span>
+                        <%= job.companyName %>
+                    </span>
+                </div>
+                <div class="jobDetails">
+                    <b>Salary</b>
+                    <span>
+                        <%= job.salary %>
+                    </span>
+                </div>
+                <div class="jobDetails">
+                    <b>Location</b>
+                    <span>
+                        <%= job.jobLocation %>
+                    </span>
+                </div>
+                <div class="jobDetails">
+                    <b>Work Experience</b>
+                    <span>
+                        <%= job.workExperience %>
+                    </span>
+                </div>
+                <div class="jobDetails">
+                    <b>Opening</b>
+                    <span>
+                        <%= job.numberOfopenings %>
+                    </span>
+                </div>
+                <div class="jobDetails">
+                    <b>Applicants</b>
+                    <% if(job.applicants.length==0){%>
+                        <span> 0 </span>
                         <%}else{%>
-                            <span><a href="viewApplicants"><%= job.applicants.length %></a></span>
-                        <%}%>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Skills</b>
-                        <% job.skillsRequired.forEach(skill=>{ %>
-                            <span class="skillsChip"><%= skill %></span>
+                            <span><a href="viewApplicants">
+                                    <%= job.applicants.length %>
+                                </a></span>
+                            <%}%>
+                </div>
+                <div class="jobDetails">
+                    <b>Skills</b>
+                    <% job.skillsRequired.forEach(skill=>{ %>
+                        <span class="skillsChip">
+                            <%= skill %>
+                        </span>
                         <% }) %>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Apply By</b>
-                        <span><%= job.applyBy %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <b>Posted By</b>
-                        <span><%= job.postedBy %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <a href="/updatedJob" class="updatedJob">Update Job</a>
-                        <a href="/deletejob" class="deleteJob">Delete Job</a>
-                    </div>
-                </section>
-            </div>
+                </div>
+                <div class="jobDetails">
+                    <b>Apply By</b>
+                    <span>
+                        <%= job.applyBy %>
+                    </span>
+                </div>
+                <div class="jobDetails">
+                    <b>Posted By</b>
+                    <span>
+                        <%= job.postedBy %>
+                    </span>
+                </div>
+                <% if(userName){ %>
+                    <% if(role=='recruiter' ){ %>
+                        <div class="jobDetails">
+                            <button class="updatedJob" onclick="updateJob('<%= JSON.stringify(job) %>')">Update Job</button>
+                            <button class="deleteJob" onclick="deleteJob('<%= JSON.stringify(job) %>')">Delete Job</button>
+                        </div>
+
+                        <% } else {%>
+                            <div class="jobDetails">
+                                <a href="/applyJob" class="applyJob">Apply Job</a>
+                            </div>
+                            <% } %>
+                                <% } %>
+
+
+            </section>
+        </div>
     </section>
 </div>

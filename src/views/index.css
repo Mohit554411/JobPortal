@@ -18,7 +18,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1% 5%;
+    height: 10vh;
+    margin: 0 5%;
+    margin-bottom: 2vh;
 }
 
 .navContainer a {
@@ -43,6 +45,7 @@ body {
     margin-right: 5vw;
     filter: drop-shadow(0 0 5px #25302d);
 }
+
 .signUpBtn {
     background-color: #1f342b;
     border-radius: 8px;
@@ -63,18 +66,78 @@ body {
 .mainContainer {
     margin: 0 5%;
 }
-
+.rightSection{
+    position: relative;
+}
+.profileContainer{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #1c4b3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 0 5px #000000;
+    cursor: pointer;
+}
+.profileContainer b{
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.profileDetails{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #1c4b3d;
+    border-radius: 12px;
+    box-shadow: 0 0 5px #000000;
+    display: none;
+    z-index: 10;
+    padding: 8px 16px;
+}
+.hidden{
+    display: block;
+}
+.profileDetails b{
+    width: 100%;
+    color: #7a7a7a;
+    text-align: left;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+.profileDetails b:nth-of-type(1){
+    font-size: 16px;
+    color: white;
+}
+.profileDetails a{
+    width: 100%;
+    max-width: 100%;
+    color: white;
+    text-align: left;
+    display: block;
+    font-size: 12px;
+    background-color: #1f342b;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 0;
+    box-shadow: 0 0 5px #33413e;
+}
 /* register */
 
 .registerContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 80vh;
+    height: 86vh;
 }
-.registerContainer .title{
+
+.registerContainer .title {
     height: 40vh;
-    font-size: clamp(1.5rem,3vw,3rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
     background-color: #1c4b3d;
     flex-grow: 1;
     display: flex;
@@ -84,7 +147,8 @@ body {
     border-radius: 18px 0 0 18px;
     box-shadow: 0 0 5px #101d19;
 }
-.registerContainer .formCard{
+
+.registerContainer .formCard {
     display: flex;
     flex-direction: column;
     width: 30vw;
@@ -93,11 +157,13 @@ body {
     border-radius: 18px;
     box-shadow: 0 0 5px #101d19;
 }
-.registerContainer .formCard label{
+
+.registerContainer .formCard label {
     margin: 8px 0;
     color: #7a7a7a;
 }
-.registerContainer .formCard input{
+
+.registerContainer .formCard input {
     margin: 8px 0;
     padding: 10px 12px;
     border: none;
@@ -105,10 +171,12 @@ body {
     color: #7a7a7a;
     border-radius: 8px;
 }
-.registerContainer .formCard span{
+
+.registerContainer .formCard span {
     color: #7a7a7a;
 }
-.registerContainer .formCard select{
+
+.registerContainer .formCard select {
     margin-top: 10px;
     padding: 10px;
     border: none;
@@ -116,7 +184,8 @@ body {
     color: #7a7a7a;
     outline: none;
 }
-.registerContainer .formCard button{
+
+.registerContainer .formCard button {
     margin-top: 20px;
     padding: 10px;
     border: none;
@@ -126,17 +195,21 @@ body {
     cursor: pointer;
     font-size: 1rem;
 }
-.loginContainer{
-    margin-top: 2%;
+
+.loginContainer {
     width: 100%;
-    height: 85vh;
+    height: 86vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     background-image: url("/images/loginBackground.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 18px;
 }
-.loginContainer .formCard{
+
+.loginContainer .formCard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -149,13 +222,15 @@ body {
     margin: 0;
     margin-bottom: 20vh;
 }
-.loginContainer input{
+
+.loginContainer input {
     padding: 10px;
     border: none;
     outline: none;
     border-radius: 8px;
 }
-.loginContainer .submit{
+
+.loginContainer .submit {
     padding: 10px;
     border: none;
     border-radius: 8px;
@@ -164,6 +239,7 @@ body {
     cursor: pointer;
     font-size: 1rem;
 }
+
 /* landing */
 .row {
     padding: 2%;
@@ -255,15 +331,14 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    padding: 2%;
-    height: 75vh;
+    padding: 0 2%;
+    height: 86vh;
     gap: 2%;
 }
 
 .filterSection {
     width: 22vw;
     max-width: 30vw;
-    height: 75vh;
     border: 1px solid #7a7a7a;
     border-radius: 18px;
     color: white;
@@ -273,9 +348,8 @@ body {
 .jobListSection {
     flex-grow: 1;
     border-radius: 18px;
-    /* padding: 16px; */
     color: white;
-    height: 80vh;
+    height: 86vh;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -300,67 +374,74 @@ body {
     cursor: pointer;
 }
 
- .jobCard header {
+.jobCard header {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
 }
 
- .jobCard header img {
+.jobCard header img {
     border: 1px solid #7a7a7a;
     border-radius: 50%;
+    width: 64px;
+    aspect-ratio: 1/1;
 }
 
- .jobCard header .jobCard__header__content {
+.jobCard header .jobCard__header__content {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
- .jobCard header h3,
- .jobCard header p {
+.jobCard header h3,
+.jobCard header p {
     margin: 0;
     margin-left: 30px;
 }
 
- .jobCard section {
+.jobCard section {
     margin: 16px 16px 0 16px;
 }
 
- .jobCard section .jobDetails {
+.jobCard section .jobDetails {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 8px;
 }
 
- .jobCard section .jobDetails span {
+.jobCard section .jobDetails span {
     font-size: clamp(12px, 1vw, 14px);
     margin-left: 20px;
 }
- .jobCard section .jobDetails b {
+
+.jobCard section .jobDetails b {
     width: 200px;
     font-size: clamp(12px, 1vw, 14px);
     /* margin-left: 20px; */
 }
 
- .jobCard section .jobDetails .skillsChip {
+.jobCard section .jobDetails .skillsChip {
     font-size: clamp(12px, 1vw, 14px);
     background-color: #14d7a4;
     padding: 6px 10px;
     border-radius: 8px;
     color: rgb(255, 255, 255);
 }
- .jobCard section .jobDetails .updatedJob {
+
+.jobCard section .jobDetails .updatedJob,.jobCard section .jobDetails .applyJob {
     font-size: clamp(12px, 1vw, 14px);
     background-color: #1c4b3d;
     padding: 6px 10px;
     border-radius: 8px;
     color: rgb(255, 255, 255);
     text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
- .jobCard section .jobDetails .deleteJob {
+
+.jobCard section .jobDetails .deleteJob {
     font-size: clamp(12px, 1vw, 14px);
     background-color: #d71414;
     padding: 6px 10px;
@@ -368,74 +449,147 @@ body {
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-left: 20px;
+    border: none;
+    cursor: pointer;
 }
+
 /* job details */
-  .JobDetailsContainer{
+.JobDetailsContainer {
     position: relative;
-    padding: 2%;
-    height: 80vh;
-  }
-  .JobDetailsContainer .jobDetailsSection{
+    padding: 0 2%;
+}
+
+.JobDetailsContainer .jobDetailsSection {
     flex-grow: 1;
     border-radius: 18px;
     color: white;
     display: flex;
     flex-direction: column;
     overflow: auto;
-  }
-  .JobDetailsContainer .jobCard {
+}
+
+.JobDetailsContainer .jobCard {
     padding: 16px;
     background-color: #f1f1f6;
     border-radius: 18px;
     color: #7a7a7a;
 }
+
 /* JobPost */
-.postJobContainer .errorMessage{
-    height: 80vh;
+.postJobContainer .errorMessage {
+    height: 86vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color:white
+    color: white
 }
-.postJobContainer section{
+
+.postJobContainer section {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 80vh;
-    width: 50%;
-    background-color: #f1f1f6;
     flex-direction: column;
-    /* margin-top: 30px; */
+    height: 86vh;
+    width: 90%;
+    background-color: #f1f1f6;
     border-radius: 18px;
-    margin: auto;
+    padding: 0 5%;
+    overflow: auto;
 }
-.postJobContainer section form{
-    /* width: 100%; */
+.postJobContainer section h2{
+    /* display: inline-block; */
+    margin: 0;
+    padding: 14px 0;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    font-weight: 500;
+    color: #7a7a7a;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.postJobContainer section form {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 8px;
+    flex-grow: 1;
+}
+.postJobContainer section form  p{
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    top: -22px;
+    left: 30px;
+    background-color: #f1f1f6;
+    padding: 0 8px;
+}
+.postJobContainer section form .companyDetails,.postJobContainer section form .jobDetails{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    padding: 0 5%;
-    box-sizing: border-box;
-    overflow: auto;
-    margin: 0;
+    flex-direction: row;
+    position: relative;
+    border: 1px solid #e3e3e3;
+    margin-top: 30px;
+    border-radius: 8px;
+    padding: 12px;
+    flex-wrap: wrap;
 }
-.postJobContainer section form .inputField{
-    width: 100%;
+.postJobContainer section form .otherDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    border: 1px solid #e3e3e3;
+    margin-top: 30px;
+    border-radius: 8px;
+    padding: 12px;
+}
+.postJobContainer section form .inputField {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
     padding: 12px;
+    flex-grow: 1;
 }
-.postJobContainer section .buttonField{
+.postJobContainer section form .skillsfield {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.postJobContainer section form .skillsfield .selectedSkill {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.postJobContainer section form .skillsfield span {
+    background-color: #14d7a4;
+    color: white;
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+    margin: 0 8px 16px 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.postJobContainer section .buttonField {
     margin: 1em;
     /* margin-top: 0; */
     width: 100%;
     text-align: center;
 }
-.postJobContainer section .buttonField button{
+
+.postJobContainer section .buttonField button {
     padding: 12px;
     border-radius: 12px;
     border: none;
@@ -445,31 +599,35 @@ body {
     color: white;
     cursor: pointer;
 }
-.postJobContainer section form .inputField label{
-    width: 200px;
+
+.postJobContainer section form .inputField label {
     font-size: clamp(12px, 1vw, 14px);
     text-align: left;
     color: #7a7a7a;
+    padding-right: 2vw;
 }
-.postJobContainer section form .inputField input{
+
+.postJobContainer section form .inputField input {
     flex-grow: 1;
-    font-size: 12px
+    font-size: 12px;
     text-align: left;
     border: none;
     outline: none;
     padding: 8px;
     border-radius: 8px;
 }
-.postJobContainer section form .inputField select{
+
+.postJobContainer section form .inputField select {
     flex-grow: 1;
-    font-size: 12px
+    font-size: 12px;
     text-align: left;
     border: none;
     outline: none;
     padding: 8px;
     border-radius: 8px;
 }
-input::placeholder{
+
+input::placeholder {
     color: #a7a7a7;
     letter-spacing: 0.5px;
     font-weight: 300;

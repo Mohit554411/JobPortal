@@ -23,10 +23,16 @@
         </div>
         <% if(locals.userEmail) {%>
             <div class="rightSection">
-                <!-- <b href="/login" class="username">
-                    <%= locals.userEmail%>
-                </b> -->
-                <a href="/logOut" class="signUpBtn">Log out</a>
+                <div class="profileContainer">
+                    <b>MK</b>
+                </div>
+                <div class="profileDetails">
+                    <b><%= locals.userName %></b>
+                    <b>Last Visit: <%= locals.lastVisit %></b>
+                    <b>Role: <%= locals.role %></b>
+                    <a href="/logOut">Log out</a>
+                </div>
+                <!-- <a href="/logOut" class="signUpBtn">Log out</a> -->
             </div>
             <%} else {%>
                 <div class="rightSection">
@@ -38,11 +44,6 @@
     <main class="mainContainer">
         <%- body %>
     </main>
-    <% if(locals.userEmail) {%>
-    <footer>
-            <b>Your Last Visit was on : <%= locals.lastVisit %></b>
-    </footer>
-    <%}%>
     <script src="main.js"></script>
 </body>
 

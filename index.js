@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser';
 import JobController from './src/controllers/job.controller.js';
 import UserController from './src/controllers/user.controller.js';
 import {setLastVisit} from './src/middlewares/lastVisit.middleware.js';
-
+import { uploadFile } from './src/middlewares/file-upload.middleware.js';
 const app = express();
 app.use(cookieParser());
 app.use(session({
@@ -32,11 +32,16 @@ app.get('/register',userController.getResgister);
 app.post('/register',userController.postRegister);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
+app.get('/logout', userController.logout);
 
 app.get('/jobs',jobController.getAllJObs);
 app.get('/postJobs',jobController.getPostJob)
 app.get('/jobDetails',jobController.getJobDetails);
-
+app.post('/postJobs',uploadFile.single('logo'),jobController.postJobData);
+app.delete('/deleteJob',jobController.deleteJob);
+app.get('/applyJob',jobController.applyJob);
+app.get('/updateJob',jobController.getPostJob);
+app.put('/updateJob',jobController.putUpdateJob);
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
 });

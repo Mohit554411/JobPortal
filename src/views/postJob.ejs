@@ -9,52 +9,68 @@
       </div>
       <% } else {%>
          <section>
-            <h2>Post a new job</h2>
-            <form action="">
-               <div class="inputField">
-                  <label for="CompanyName">Company Name</label>
-                  <input type="text" name="CompanyName" placeholder="ex:Alpha.inc" required>
+            <h2>Create a new job post</h2>
+            <form class="postJobForm">
+               <div class="companyDetails">
+                  <p>Company Details</p>
+                  <div class="inputField">
+                     <label for="CompanyName">Company Name</label>
+                     <input type="text" name="companyName" placeholder="ex:Alpha.inc" required>
+                  </div>
+                  <div class="inputField" id="logo">
+                     <label for="logo">Compnay Logo</label>
+                     <input type="file" name="logo" accept="images/*" required>
+                  </div>
                </div>
-               <div class="inputField">
-                  <label for="jobCategory">Job Category</label>
-                  <select name="jobCategory" id="jobCategory" required>
-                     <option value="" disabled selected>Select job category</option>
-                     <option value="tech">Tech</option>
-                     <option value="nonTech">Non-Tech</option>
-                  </select>
+               <div class="jobDetails">
+                  <p>Job Details</p>
+                  <div class="inputField">
+                     <label for="jobCategory">Job Category</label>
+                     <select name="jobCategory" id="jobCategory" required>
+                        <option value="" disabled selected>Select job category</option>
+                     </select>
+                  </div>
+                  <div class="inputField">
+                     <label for="jobDesignation">Job Designation</label>
+                     <select name="jobDesignation" id="jobDesignation" required>
+                        <option value="" disabled selected>Select job designation</option>
+                     </select>
+                  </div>
                </div>
-               <div class="inputField">
-                  <label for="jobDesignation">Job Designation</label>
-                  <select name="jobDesignation" id="jobDesignation" required>
-                     <option value="" disabled selected>Select job designation</option>
-                     <option value="tech">Tech</option>
-                     <option value="nonTech">Non-Tech</option>
-                  </select>
+               
+               <div class="otherDetails">
+                  <p>Other Details</p>
+                  <div class="inputField">
+                     <label for="jobLocation">Location</label>
+                     <input type="text" name="jobLocation" placeholder="ex:Hyderabad" required>
+                  </div>
+                  <div class="inputField">
+                     <label for="salary">Salary</label>
+                     <input type="text" name="salary" placeholder="ex:10LPA" required>
+                  </div>
+                  <div class="inputField">
+                     <label for="experince">Years of experince</label>
+                     <input type="text" name="experince" placeholder="ex:1-2Y" required>
+                  </div>
+                  <div class="inputField">
+                     <label for="opening">No of opening</label>
+                     <input type="number" name="opening" placeholder="ex:50" required>
+                  </div>
+                  <div class="inputField">
+                     <label for="applyBy">Apply By</label>
+                     <input type="date" name="applyBy" required>
+                  </div>
+                  <div class="inputField skillsfield">
+                     <label for="applyBy">Required Skills</label>
+                     <select name="skills" id="skills">
+                        
+                     </select>
+                     <div class="selectedSkill">
+                        
+                     </div>
+                  </div>
                </div>
-               <div class="inputField">
-                  <label for="jobLocation">Job Location</label>
-                  <input type="text" name="jobLocation" placeholder="ex:Hyderabad" required>
-               </div>
-               <div class="inputField">
-                  <label for="salary">Salary</label>
-                  <input type="text" name="salary" placeholder="ex:10LPA" required>
-               </div>
-               <div class="inputField">
-                  <label for="applyBy">Apply By</label>
-                  <input type="date" name="applyBy" required>
-               </div>
-               <div class="inputField">
-                  <label for="experince">Experince</label>
-                  <input type="text" name="experince" placeholder="ex:1-2Y" required>
-               </div>
-               <div class="inputField">
-                  <label for="opening">Opening</label>
-                  <input type="number" name="opening" placeholder="ex:50" required>
-               </div>
-               <div class="inputField">
-                  <label for="logo">Compnay Logo</label>
-                  <input type="file" name="logo" required>
-               </div>
+            
                <div class="buttonField">
                   <button type="submit">Create Job</button>
                </div>

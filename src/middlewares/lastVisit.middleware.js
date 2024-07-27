@@ -7,10 +7,7 @@ export const setLastVisit = (req, res, next) => {
     }
     res.cookie(
         'lastVisit',
-        new Date().toISOString(),
-        {
-            maxAge: 2 * 24 * 60 * 60 * 1000,
-        }
+        new Date().toISOString()
     );
     next();
 }

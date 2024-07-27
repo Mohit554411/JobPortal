@@ -29,8 +29,15 @@ export default class UserController {
         }
         req.session.userEmail = result.email;
         req.session.role = result.role;
-        res.render('landing',{userEmail:req.session.userEmail});
+        req.session.userName = result.name;
+        res.cookie('userEmail',result.email);
+        res.render('landing',{userEmail:req.session.userEmail,userName:req.session.userName,role:req.session.role});
 
+    }
+    logout(req, res) {
+        req.session.destroy();
+        res.clearCookie('userEmail');
+        res.redirect('/');
     }
 
 }
