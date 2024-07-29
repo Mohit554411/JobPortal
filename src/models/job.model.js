@@ -66,7 +66,7 @@ export default class JobModel {
         const job = jobs.find(job=>job.id == applicants.jobId);
         if(job){
             job.applicants.push(applicants);
-            return true;
+            return job;
         }else{
             return false;
         }

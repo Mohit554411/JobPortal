@@ -1,12 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Template</title>
+  <title>Job Application Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: cadetblue;
+      color: #ffffff;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .header img {
+      max-width: 64px;
+      aspect-ratio: 1/1;
+    }
+
+    .content {
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .content p{
+      color: #ffffff;
+    }
+
+    .footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9em;
+      color: #ffffff;
+    }
+  </style>
 </head>
+
 <body>
-  <h1 style="color: brown;">Welcome, <%= name %>!</h1>
-  <p>This is a sample email with a UI rendered using EJS.</p>
+  <div class="container">
+    <div class="header">
+
+      <img src="cid:companyLogo" alt="<%= jobData.companyName %> Logo">
+
+      <h1>Job Application Confirmation</h1>
+    </div>
+    <div class="content">
+      <p>Dear <%= userName %>,</p>
+      <p>Thank you for applying for the <strong>
+          <%= jobData.jobDesignation %>
+        </strong> position at <strong>
+          <%= jobData.companyName %>
+        </strong>.</p>
+      <p>We have received your application and our team will review it shortly. Below are the details of the job you
+        applied for:</p>
+      <ul>
+        <li><strong>Job Title:</strong>
+          <%= jobData.jobDesignation %>
+        </li>
+        <li><strong>Job Location:</strong>
+          <%= jobData.jobLocation %>
+        </li>
+        <li><strong>Posted Date:</strong>
+          <%= jobData.jobPosted %>
+        </li>
+      </ul>
+      <p>If you have any questions, please feel free to reply to this email.</p>
+      <p>Best regards,</p>
+      <p>
+        <%= jobData.companyName %> Recruitment Team
+      </p>
+    </div>
+    <div class="footer">
+      <p>&copy; <%= new Date().getFullYear() %>
+          <%= jobData.companyName %>. All rights reserved.</p>
+    </div>
+  </div>
 </body>
+
 </html>
