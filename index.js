@@ -25,8 +25,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(path.resolve(), 'src', 'views'));
 app.use(setLastVisit);
 
-const jobController = new JobController
-const userController = new UserController
+const jobController = new JobController();
+const userController = new UserController();
 app.get('/',jobController.getLandingPage);
 app.get('/register',userController.getResgister);
 app.post('/register',userController.postRegister);
@@ -39,7 +39,7 @@ app.get('/postJobs',jobController.getPostJob)
 app.get('/jobDetails',jobController.getJobDetails);
 app.post('/postJobs',uploadFile.single('logo'),jobController.postJobData);
 app.delete('/deleteJob',jobController.deleteJob);
-app.get('/applyJob',jobController.applyJob);
+app.post('/applyJob',uploadFile.single('resume'),jobController.applyJob);
 app.get('/updateJob',jobController.getPostJob);
 app.put('/updateJob',jobController.putUpdateJob);
 app.listen(3000, () => {

@@ -8,7 +8,6 @@ const storageConfig = multer.diskStorage({
         cb(null, Date.now() + file.originalname);
     }
 });
-
 export const uploadFile = multer({
     storage: storageConfig,
   });

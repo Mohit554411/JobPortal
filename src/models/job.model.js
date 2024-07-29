@@ -62,6 +62,15 @@ export default class JobModel {
         deleteUploadFile(jobs.find(job => job.id == id).compnayLogo);
         jobs = jobs.filter(job => job.id != id);
     }
+    static jobApply(applicants){
+        const job = jobs.find(job=>job.id == applicants.jobId);
+        if(job){
+            job.applicants.push(applicants);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 let jobs = [
     new JobModel(1, 'Software Engineer', 'Software Engineer', 'Bangalore', 'Infosys', '10LPA', '26/08/2024', ['React', 'Java', 'HTML', 'CSS'], '0-2Y', '50', '19/07/2024', [], '', 'System'),

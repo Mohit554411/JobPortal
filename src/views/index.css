@@ -66,10 +66,12 @@ body {
 .mainContainer {
     margin: 0 5%;
 }
-.rightSection{
+
+.rightSection {
     position: relative;
 }
-.profileContainer{
+
+.profileContainer {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -81,11 +83,13 @@ body {
     box-shadow: 0 0 5px #000000;
     cursor: pointer;
 }
-.profileContainer b{
+
+.profileContainer b {
     font-size: 12px;
     letter-spacing: 1px;
 }
-.profileDetails{
+
+.profileDetails {
     position: absolute;
     top: 60px;
     right: 0;
@@ -97,10 +101,12 @@ body {
     z-index: 10;
     padding: 8px 16px;
 }
-.hidden{
+
+.hidden {
     display: block;
 }
-.profileDetails b{
+
+.profileDetails b {
     width: 100%;
     color: #7a7a7a;
     text-align: left;
@@ -109,11 +115,13 @@ body {
     margin-bottom: 8px;
     text-transform: capitalize;
 }
-.profileDetails b:nth-of-type(1){
+
+.profileDetails b:nth-of-type(1) {
     font-size: 16px;
     color: white;
 }
-.profileDetails a{
+
+.profileDetails a {
     width: 100%;
     max-width: 100%;
     color: white;
@@ -126,6 +134,7 @@ body {
     padding: 8px 0;
     box-shadow: 0 0 5px #33413e;
 }
+
 /* register */
 
 .registerContainer {
@@ -345,6 +354,26 @@ body {
     padding: 16px;
 }
 
+/* .filterSection__content{
+    margin-top: 30px;
+} */
+.filterMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0;
+
+}
+
+.filterMenu p {
+    font-size: 13px;
+}
+
+.filterMenu select {
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 12px;
+}
+
 .jobListSection {
     flex-grow: 1;
     border-radius: 18px;
@@ -430,7 +459,8 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.jobCard section .jobDetails .updatedJob,.jobCard section .jobDetails .applyJob {
+.jobCard section .jobDetails .updatedJob,
+.jobCard section .jobDetails .applyJob {
     font-size: clamp(12px, 1vw, 14px);
     background-color: #1c4b3d;
     padding: 6px 10px;
@@ -475,6 +505,124 @@ body {
     color: #7a7a7a;
 }
 
+.applyJobContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.applyFormContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 16px;
+    border-radius: 18px;
+    margin: 0;
+
+}
+.applyFormContainer .inputField {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 12px;
+    flex-grow: 1;
+}
+.applyFormContainer .inputField h3{
+    margin: 0;
+}
+.applyFormContainer .inputField span{
+    cursor: pointer;
+    border: 1px solid #000000;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.applyFormContainer  .inputField label {
+    font-size: clamp(12px, 1vw, 14px);
+    text-align: left;
+    color: #7a7a7a;
+    padding-right: 2vw;
+    width: 150px;
+}
+
+.applyFormContainer .inputField input {
+    flex-grow: 1;
+    font-size: 12px;
+    text-align: left;
+    border: 1px solid #bbb;
+    outline: none;
+    padding: 8px;
+    border-radius: 8px;
+}
+.applyFormContainer  .buttonField button {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    width: 120px;
+    font-size: 14px;
+    background-color: #1c4b3d;
+    color: white;
+    cursor: pointer;
+}
+.applyFormContainer .buttonField {
+    margin: 1em;
+    /* margin-top: 0; */
+    width: 100%;
+    text-align: center;
+}
+.viewApplicantsContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 16px;
+    border-radius: 18px;
+    margin: 0;
+}
+.viewApplicantsContainer .titleField{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 12px;
+    flex-grow: 1;
+    border-bottom: 1px solid #bbb;
+}
+.viewApplicantsContainer .titleField h3{
+    margin: 0;
+}
+.viewApplicantsContainer .titleField span{
+    cursor: pointer;
+    border: 1px solid #000000;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.viewApplicantsContainer table{
+    margin: 2%;
+}
+.viewApplicantsContainer table th,.viewApplicantsContainer table td{
+    padding: 1% 3%;
+    width: 20vw;
+    text-align: center;
+}
+.viewApplicantsContainer table td{
+    font-size: 12px;
+    color: #7a7a7a;
+}
+
 /* JobPost */
 .postJobContainer .errorMessage {
     height: 86vh;
@@ -495,7 +643,8 @@ body {
     padding: 0 5%;
     overflow: auto;
 }
-.postJobContainer section h2{
+
+.postJobContainer section h2 {
     /* display: inline-block; */
     margin: 0;
     padding: 14px 0;
@@ -515,7 +664,8 @@ body {
     padding: 0 8px;
     flex-grow: 1;
 }
-.postJobContainer section form  p{
+
+.postJobContainer section form p {
     text-align: left;
     font-size: 12px;
     font-weight: 600;
@@ -525,7 +675,9 @@ body {
     background-color: #f1f1f6;
     padding: 0 8px;
 }
-.postJobContainer section form .companyDetails,.postJobContainer section form .jobDetails{
+
+.postJobContainer section form .companyDetails,
+.postJobContainer section form .jobDetails {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -537,7 +689,8 @@ body {
     padding: 12px;
     flex-wrap: wrap;
 }
-.postJobContainer section form .otherDetails{
+
+.postJobContainer section form .otherDetails {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -549,6 +702,7 @@ body {
     border-radius: 8px;
     padding: 12px;
 }
+
 .postJobContainer section form .inputField {
     display: flex;
     align-items: center;
@@ -557,6 +711,7 @@ body {
     padding: 12px;
     flex-grow: 1;
 }
+
 .postJobContainer section form .skillsfield {
     width: 100%;
     display: flex;
@@ -564,6 +719,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .postJobContainer section form .skillsfield .selectedSkill {
     width: 50%;
     display: flex;
@@ -571,6 +727,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .postJobContainer section form .skillsfield span {
     background-color: #14d7a4;
     color: white;

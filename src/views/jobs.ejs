@@ -1,44 +1,39 @@
 <div class="JobContainer">
+    <input type="hidden" id="jobsData" value='<%= JSON.stringify(jobs) %>' />
     <aside class="filterSection">
         <header><img src="/images/filterIcon.svg" alt=""><span>Filters</span></header>
         <div class="filterSection__content">
+            <div class="filterMenu">
+                <p>Company</p>
+                <select id="company" name="company">
+                    <option value="" selected disabled>select company</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="filterMenu">
+                <p>Location</p>
+                <select id="location" name="location">
+                    <option value="" selected disabled>select location</option>
+                    <option value="all" >All</option>
+                </select>
+            </div>
+            <div class="filterMenu">
+                <p>Job Category</p>
+                <select id="jobCategory" name="jobCategory">
+                    <option value="" selected disabled>select category</option>
+                    <option value="all" >All</option>
+                </select>
+            </div>
+            <div class="filterMenu">
+                <p>Job Designation</p>
+                <select id="jobDesignation" name="jobDesignation">
+                    <option value="" selected disabled>select designation</option>
+                    <option value="all" >All</option>
+                </select>
+            </div>
         </div>
     </aside>
     <section class="jobListSection">
-        <% jobs.forEach(job=>{ %>
-            <div class="jobCard" data-job-id='<%= job.id %>'>
-                <header>
-                    <div class="jobCard__header__content">
-                        <% if(job.compnayLogo){ %>
-                        <img src="<%= job.compnayLogo %>" alt="">
-                        <% } else {%>
-                        <img src="/images/reactIcon.svg" alt="">
-                        <% } %>
-                        <div>
-                            <h3><%= job.jobCategory %></h3>
-                            <p><%= job.jobDesignation %></p>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Posted <%= job.jobPosted %></p>
-                    </div>
-                </header>
-                <section>
-                    <div class="jobDetails">
-                        <img src="/images/rupeeIcon.svg" alt="">
-                        <span><%= job.salary %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <img src="/images/locationIcon.svg" alt="">
-                        <span><%= job.jobLocation %></span>
-                    </div>
-                    <div class="jobDetails">
-                        <% job.skillsRequired.forEach(skill=>{ %>
-                            <span class="skillsChip"><%= skill %></span>
-                        <% }) %>
-                    </div>
-                </section>
-            </div>
-        <%})%>
+        
     </section>
 </div>

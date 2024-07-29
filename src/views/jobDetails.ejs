@@ -58,11 +58,15 @@
                     <b>Applicants</b>
                     <% if(job.applicants.length==0){%>
                         <span> 0 </span>
-                        <%}else{%>
-                            <span><a href="viewApplicants">
+                        <%}else if(userEmail&&role==='recruiter'){%>
+                            <span><a href="#" onclick="viewApplicants('<%= JSON.stringify(job) %>')">
                                     <%= job.applicants.length %>
                                 </a></span>
-                            <%}%>
+                            <%}else{%> 
+                                <span><a>
+                                    <%= job.applicants.length %>
+                                </a></span>
+                               <% } %>
                 </div>
                 <div class="jobDetails">
                     <b>Skills</b>
@@ -93,7 +97,7 @@
 
                         <% } else {%>
                             <div class="jobDetails">
-                                <a href="/applyJob" class="applyJob">Apply Job</a>
+                                <a onclick="applyJob('<%=userName%>','<%=userEmail%>','<%=job.id%>')" class="applyJob">Apply Job</a>
                             </div>
                             <% } %>
                                 <% } %>
