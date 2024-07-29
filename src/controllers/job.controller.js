@@ -1,4 +1,11 @@
 import JobModel from "../models/job.model.js"
+import ejs from 'ejs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import sendMail from "../middlewares/job-mail.middleware.js";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default class JobController {
     getLandingPage(req, res) {
@@ -46,7 +53,7 @@ export default class JobController {
         JobModel.deleteJob(id);
         res.status(200).json({ success: 'Job deleted successfully' });
     }
-    applyJob(req, res) {
+    async applyJob(req, res) {
         const { jobId, userName, userEmail } = req.body;
         const resume = '/uploads/' + req.file.filename;
         const applicants = {
@@ -57,6 +64,9 @@ export default class JobController {
         }
         const result = JobModel.jobApply(applicants);
         if (result) {
+            const templatePath = path.resolve(__dirname, '..', 'views',  'emailTemplate.ejs');
+            const html = await ejs.renderFile(templatePath, { name: userName });
+            await sendMail(userEmail, 'Job Application', html);
             res.status(200).json({ success: 'Job applied successfully' });
         }
         else {
