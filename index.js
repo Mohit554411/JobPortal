@@ -42,6 +42,10 @@ app.delete('/deleteJob',jobController.deleteJob);
 app.post('/applyJob',uploadFile.single('resume'),jobController.applyJob);
 app.get('/updateJob',jobController.getPostJob);
 app.put('/updateJob',jobController.putUpdateJob);
+// Handle 404 errors
+app.use((req, res, next) => {
+  res.status(404).render('pageNotFound');
+});
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
 });
