@@ -66,7 +66,7 @@ export default class JobController {
         if (jobData) {
             const templatePath = path.resolve(__dirname, '..', 'views',  'emailTemplate.ejs');
             const html = await ejs.renderFile(templatePath, { jobData: jobData,userName,userEmail });
-            await sendMail(userEmail, 'Job Application', html,jobData.compnayLogo);
+            sendMail(userEmail, 'Job Application', html,jobData.compnayLogo);
             res.status(200).json({ success: 'Job applied successfully' });
         }
         else {
